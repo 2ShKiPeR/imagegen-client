@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ImageGenClient</string>
+    <string name="start_button">START</string>
+    <string name="login_button">LOGIN</string>
+    <string name="username_placeholder">Username</string>
+    <string name="password_placeholder">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="generate_button">Generate</string>
+    <string name="check_originality_button">Check for originality</string>
+    <string name="buy_subscription_button">Buy subscription</string>
+    <string name="take_photo_button">Take a photo</string>
+    <string name="upload_photo_button">Upload photo</string>
+</resources>

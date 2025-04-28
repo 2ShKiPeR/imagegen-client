@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ImageGenClient</string>
+    <string name="start_button">НАЧАТЬ</string>
+    <string name="login_button">ВОЙТИ</string>
+    <string name="username_placeholder">Имя пользователя</string>
+    <string name="password_placeholder">Пароль</string>
+    <string name="forgot_password">Забыли пароль?</string>
+    <string name="generate_button">Сгенерировать</string>
+    <string name="check_originality_button">Проверить на оригинальность</string>
+    <string name="buy_subscription_button">Купить подписку</string>
+    <string name="take_photo_button">Сделать фото</string>
+    <string name="upload_photo_button">Загрузить фото</string>
+</resources>
