@@ -14,6 +14,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         // Устанавливаем язык из сохранённых настроек
+        val LanguageManager = LanguageManager()
         LanguageManager.getSavedLanguage(this)?.let { lang ->
             val locale = Locale(lang)
             Locale.setDefault(locale)

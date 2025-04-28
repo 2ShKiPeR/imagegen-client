@@ -19,6 +19,8 @@ import retrofit2.Response
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
+import androidx.compose.ui.res.stringResource
+import com.example.imagegenclient.R
 import com.example.imagegenclient.model.AuthResponse
 
 @Composable
@@ -39,7 +41,7 @@ fun RegisterScreen(navController: NavController) {
         OutlinedTextField(
             value = username,
             onValueChange = { username = it },
-            label = { Text("Имя пользователя") },
+            label = { Text(text = stringResource(id = R.string.username_placeholder)) },
             singleLine = true,
             modifier = Modifier.fillMaxWidth()
         )
@@ -49,7 +51,7 @@ fun RegisterScreen(navController: NavController) {
         OutlinedTextField(
             value = password,
             onValueChange = { password = it },
-            label = { Text("Пароль") },
+            label = { Text(text = stringResource(id = R.string.password_placeholder)) },
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
             visualTransformation = if (isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
@@ -71,7 +73,7 @@ fun RegisterScreen(navController: NavController) {
         OutlinedTextField(
             value = confirmPassword,
             onValueChange = { confirmPassword = it },
-            label = { Text("Подтвердите пароль") },
+            label = { Text(text = stringResource(id = R.string.password_repeat_placeholder)) },
             singleLine = true,
             modifier = Modifier.fillMaxWidth(),
             visualTransformation = if (isConfirmPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
@@ -118,7 +120,7 @@ fun RegisterScreen(navController: NavController) {
                 .fillMaxWidth()
                 .height(56.dp)
         ) {
-            Text(text = "Зарегистрироваться")
+            Text(text = stringResource(id = R.string.register_button))
         }
     }
 }

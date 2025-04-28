@@ -12,8 +12,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.asImageBitmap
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.imagegenclient.R
 import com.example.imagegenclient.network.ImageRetrofitClient
 import com.example.imagegenclient.utils.decodeBase64ToBitmap
 import kotlinx.coroutines.launch
@@ -53,7 +55,7 @@ fun GenerateScreen(navController: NavController) {
                 coroutineScope.launch {
                     isLoading = true
                     try {
-                        val token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzQ1Nzg1MjkzLCJleHAiOjE3NDU4MjEyOTN9.I0OET9R4IzKP3vaWDMkTcE7tNaHUcyaj6RMqYgzvRcI"
+                        val token = "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiaWF0IjoxNzQ1ODQ4NzEzLCJleHAiOjE3NDU4ODQ3MTN9.laTPoEY6Z6970VDqdnF4HlW7D0fVF_sujHNsGXZNvag"
                         val response = ImageRetrofitClient.apiService.generateImage(token)
                         val bitmap = decodeBase64ToBitmap(response.image)
                         generatedBitmap = bitmap
@@ -67,7 +69,7 @@ fun GenerateScreen(navController: NavController) {
             enabled = !isLoading,
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = if (isLoading) "Генерация..." else "Сгенерировать")
+            Text(text = if (isLoading) stringResource(id = R.string.generation) else stringResource(id = R.string.generate_button))
         }
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -78,7 +80,7 @@ fun GenerateScreen(navController: NavController) {
             },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Проверить на оригинальность")
+            Text(text = stringResource(id = R.string.check_originality_button))
         }
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -89,7 +91,7 @@ fun GenerateScreen(navController: NavController) {
             },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Купить подписку")
+            Text(text = stringResource(id = R.string.buy_subscription_button))
         }
     }
 }
